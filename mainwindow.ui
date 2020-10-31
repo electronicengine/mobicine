@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>805</width>
+    <height>1041</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="symtom_tab">
+       <attribute name="title">
+        <string>Symtoms</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Enter Symptom to Search</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLineEdit" name="search_line">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>80</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>80</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color:#f5bfb9</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Possible Symptoms</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QQuickWidget" name="possible_symptomps_list_widget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="resizeMode">
+           <enum>QQuickWidget::SizeRootObjectToView</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QPushButton" name="add_all_to_examined_symptoms_button">
+            <property name="text">
+             <string>Add All List</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images/images.qrc">
+              <normaloff>:/pass_pressed.png</normaloff>:/pass_pressed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>80</width>
+              <height>80</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="add_to_examine_symptoms_button">
+            <property name="text">
+             <string>Add To List</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images/images.qrc">
+              <normaloff>:/add_pressed.png</normaloff>:/add_pressed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>80</width>
+              <height>80</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Will  Be Examined Symptoms</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QQuickWidget" name="examined_symptom_widget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="resizeMode">
+           <enum>QQuickWidget::SizeRootObjectToView</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QPushButton" name="clear_examine_list_button">
+              <property name="text">
+               <string>Clear List</string>
+              </property>
+              <property name="icon">
+               <iconset resource="images/images.qrc">
+                <normaloff>:/delete_pressed.png</normaloff>:/delete_pressed.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>80</width>
+                <height>80</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="examine_diseases_button">
+              <property name="text">
+               <string>Examine</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <selectedon>:/show_pressed.png</selectedon>
+               </iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>80</width>
+                <height>80</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="disease_tab">
+       <attribute name="title">
+        <string>Diseases</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Matched Diseases With Entered Symptoms </string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QQuickWidget" name="matched_diseases_widget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="resizeMode">
+           <enum>QQuickWidget::SizeRootObjectToView</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QPushButton" name="add_all_to_examined_diseases_button">
+            <property name="text">
+             <string>Add All to List</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images/images.qrc">
+              <normaloff>:/pass_pressed.png</normaloff>:/pass_pressed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>80</width>
+              <height>80</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="add_to_examined_diseases_list_button">
+            <property name="text">
+             <string>Add To List</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images/images.qrc">
+              <normaloff>:/add_pressed.png</normaloff>:/add_pressed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>80</width>
+              <height>80</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Examine Disease List</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QQuickWidget" name="examine_diseases_widget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="resizeMode">
+           <enum>QQuickWidget::SizeRootObjectToView</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="clear_examine_disease_list_button">
+            <property name="text">
+             <string>Clear List</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images/images.qrc">
+              <normaloff>:/delete_pressed.png</normaloff>:/delete_pressed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>80</width>
+              <height>80</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="examine_differential_diagnosis_button">
+            <property name="text">
+             <string>Examine</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images/images.qrc">
+              <normaloff>:/show_pressed.png</normaloff>:/show_pressed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>80</width>
+              <height>80</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="diagnos_tab">
+       <attribute name="title">
+        <string>Differential</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Differential Diagnosis According To Selected Diseases </string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QQuickWidget" name="differential_diagnosis_widget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="resizeMode">
+           <enum>QQuickWidget::SizeRootObjectToView</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QPushButton" name="add_all_to_examined_diagnosis_button">
+            <property name="text">
+             <string>Add All to List</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images/images.qrc">
+              <normaloff>:/pass_pressed.png</normaloff>:/pass_pressed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>80</width>
+              <height>80</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="add_examine_diagnosis_list_button">
+            <property name="text">
+             <string>Add To List</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images/images.qrc">
+              <normaloff>:/add_pressed.png</normaloff>:/add_pressed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>80</width>
+              <height>80</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Examine Diagnosis List</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QQuickWidget" name="examine_diagnosis_widget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="resizeMode">
+           <enum>QQuickWidget::SizeRootObjectToView</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QPushButton" name="clear_examine_diagnosis_list_button">
+            <property name="text">
+             <string>Clear List</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images/images.qrc">
+              <normaloff>:/delete_pressed.png</normaloff>:/delete_pressed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>80</width>
+              <height>80</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="examine_joint_result_button">
+            <property name="text">
+             <string>Examine </string>
+            </property>
+            <property name="icon">
+             <iconset resource="images/images.qrc">
+              <normaloff>:/show_pressed.png</normaloff>:/show_pressed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>80</width>
+              <height>80</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="result_tab">
+       <attribute name="title">
+        <string>Result</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Result Diseases</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QQuickWidget" name="result_widget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="resizeMode">
+           <enum>QQuickWidget::SizeRootObjectToView</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clear_result_button">
+          <property name="text">
+           <string>clear Results</string>
+          </property>
+          <property name="icon">
+           <iconset resource="images/images.qrc">
+            <normaloff>:/delete_pressed.png</normaloff>:/delete_pressed.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>80</width>
+            <height>80</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>805</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QQuickWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QtQuickWidgets/QQuickWidget</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="images/images.qrc"/>
+  <include location="images/images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

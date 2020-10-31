@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/">
+        <file>wifi_unlocked.png</file>
+        <file>wifi_locked.png</file>
+        <file>up_unpressed.png</file>
+        <file>up_pressed.png</file>
+        <file>toggle_button_on.png</file>
+        <file>toggle_button_off.png</file>
+        <file>template.png</file>
+        <file>stop_unpressed.png</file>
+        <file>stop_pressed.png</file>
+        <file>start_unpressed.png</file>
+        <file>start_pressed.png</file>
+        <file>show_unpressed.png</file>
+        <file>show_pressed.png</file>
+        <file>right_unpressed.png</file>
+        <file>right_pressed.png</file>
+        <file>refresh_unpressed.png</file>
+        <file>refresh_pressed.png</file>
+        <file>pass_unpressed.png</file>
+        <file>pass_previous_unpressed.png</file>
+        <file>pass_previous_pressed.png</file>
+        <file>pass_pressed.png</file>
+        <file>left_unpressed.png</file>
+        <file>left_pressed.png</file>
+        <file>laser_unlocked.png</file>
+        <file>laser_locked.png</file>
+        <file>down_unpressed.png</file>
+        <file>down_pressed.png</file>
+        <file>delete_unpressed.png</file>
+        <file>delete_pressed.png</file>
+        <file>add_unpressed.png</file>
+        <file>add_pressed.png</file>
+        <file>../widget.qml</file>
+        <file>../AndroidManifest.xml</file>
+        <file>../QtAndroidToastJava.java</file>
+    </qresource>
+</RCC>
