@@ -1,19 +1,22 @@
-QT       += core gui
+QT       += core gui charts network quickwidgets qml
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets sql  network quickwidgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets core gui charts network quickwidgets qml
+
 #androidextras
 
-CONFIG += c++11
+CONFIG += c++14
 
 
 
 SOURCES += \
+    httpaccess.cpp \
     main.cpp \
     mainwindow.cpp \
     qmllistitem.cpp \
     qmllistobject.cpp
 
 HEADERS += \
+    httpaccess.h \
     mainwindow.h \
     qmllistitem.h \
     qmllistobject.h
@@ -21,14 +24,23 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+ANDROID_EXTRA_LIBS += \
+    /home/yusuf/Android/Sdk/android_openssl/latest/arm64/libcrypto_1_1.so \
+    /home/yusuf/Android/Sdk/android_openssl/latest/arm64/libssl_1_1.so \
+    /home/yusuf/Android/Sdk/android_openssl/latest/arm/libcrypto_1_1.so \
+    /home/yusuf/Android/Sdk/android_openssl/latest/arm/libssl_1_1.so \
+    /home/yusuf/Android/Sdk/android_openssl/latest/x86/libssl_1_1.so \
+    /home/yusuf/Android/Sdk/android_openssl/latest/x86/libcrypto_1_1.so \
+    /home/yusuf/Android/Sdk/android_openssl/latest/x86_64/libssl_1_1.so \
+    /home/yusuf/Android/Sdk/android_openssl/latest/x86_64/libcrypto_1_1.so
+
+
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-# install
-target.path = $$[QT_INSTALL_EXAMPLES]/network/http
 
-ANDROID_PACKAGE_SOURCE_DIR = /home/yusuf/Documents/workspace/mobicine
 DISTFILES += \
     QtAndroidToastJava.java \
 
@@ -36,7 +48,6 @@ INSTALLS += target
 RESOURCES += \
     images/ \
     images/images.qrc
-    /
 
 DISTFILES += \
     AndroidManifest.xml \
@@ -87,3 +98,10 @@ DISTFILES += \
     res/drawable-mdpi/logo_portrait.png \
     rest_api/mobicine.php \
     widget.qml
+
+
+contains(ANDROID_TARGET_ARCH,) {
+    ANDROID_ABIS = \
+        armeabi-v7a \
+        armeabi-v8a
+}

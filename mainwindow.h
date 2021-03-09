@@ -4,8 +4,6 @@
 #include <QMainWindow>
 #include <QDesktopWidget>
 #include <iostream>
-#include <QSqlDatabase>
-#include <QSql>
 #include <QFileInfo>
 //#include <QtAndroid>
 #include <QFile>
@@ -26,13 +24,14 @@
 #include <QMessageBox>
 #include <memory>
 #include "qmllistobject.h"
+#include "httpaccess.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 
-#define NETWORK_TIMEOUT 1900000
 
 class MainWindow : public QMainWindow
 {
@@ -49,8 +48,6 @@ class MainWindow : public QMainWindow
     void listDiseases(const QStringList &Diseases);
     void listDiffirentialDiagnosis(const QStringList &DifferentialDiagnosis);
     void listResult(const QStringList &JointDiseases);
-    QByteArray getRequestJson(const QString &Query);
-    QStringList getHttpResponse(const QString &Query);
 
     std::shared_ptr<QmlListObject> Possible_Symptom_List;
     std::shared_ptr<QmlListObject> Examine_Symptom_List;
@@ -70,13 +67,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    QSqlDatabase Data_Base;
 public slots:
     void searchCurrentTextChanged(QString);
     void lookForDiseaseButtonClicked();
     void clearExamineListClicked();
     void examineDiseasesButtonClicked();
-    void examineDiffirentialDiagnosisButtonClicked();
+    void examineDiffirentialSymptomsButtonClicked();
     void examineJointDiseasesButtonClicked();
 
     void addToExaminedSymptomsListButtonClicked();
@@ -88,6 +84,7 @@ public slots:
     void addToExamineDiagnosisListButtonClicked();
     void addAllToExeminedDiagnosisButtonClicked();
 
+
 private slots:
 
     void clearResultButtonClicked();
@@ -96,5 +93,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    HttpAccess Http_Access;
+
 };
 #endif // MAINWINDOW_H
